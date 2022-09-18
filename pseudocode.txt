@@ -1,0 +1,40 @@
+READ AND WRITE "jmlKopi" AS INTEGER
+READ AND WRITE "stok" AS INTEGER
+READ AND WRITE "hargaKopi" AS INTEGER
+READ AND WRITE "totalBayar" AS INTEGER
+READ AND WRITE "pilihanKopi" AS STRING
+READ AND WRITE "pilihanUser" AS STRING
+
+PROCEDURE menuCoffeshop():
+    print :
+	1. Americano
+	2. Espresso
+	3. Latte
+END PROCEDURE
+
+PROCEDURE orderKopi():
+    
+	(proses order)
+	print: "Kopi berhasil diorder"
+END PROCEDURE
+
+main:
+	call menuCoffeshop()
+	repeat:
+		input: pilihanKopi, jmlKopi
+		if jmlKopi > stok:
+		print: "Stok kopi habis!"
+		break
+		else:
+		print: "Kopi telah ditambahkan ke keranjang"
+		print: "Apakah ingin menambah pesanan kopi?"
+		input: pilihanUser
+    
+    until pilihanUser == "Yes"
+	call menuCoffeshop()
+	until pilihanUser == "No"
+	calculating totalBayar()
+	jmlKopi*hargaKopi = totalBayar
+	checkout
+	print: "checkout berhasil, pesanan disiapkan!"
+	call menuCoffeshop()
